@@ -1,3 +1,5 @@
+![CI](https://github.com/jonmbake/react-bootstrap-static-gen/workflows/CI/badge.svg)
+
 # react-bootstrap-static-gen
 
 A dead-simple static page generator for [react-bootstrap](https://github.com/react-bootstrap/react-bootstrap). This
