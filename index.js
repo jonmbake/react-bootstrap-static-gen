@@ -12,7 +12,7 @@ const htmlTemplate = (pageTitle = '', pageBody, style) => {
 <head>
   <meta charset="utf-8">
   <title>${ pageTitle }</title>
-  <link rel="styleheet" href="${ style }">
+  <link rel="stylesheet" href="${ style }">
 </head>
 <body>
   ${ pageBody }
@@ -63,7 +63,9 @@ const {_: pagesDirectory, o: outputDirectory = `${pagesDirectory}-output`, d: de
     .help()
     .argv;
 
-  //console.log('CLI arguments ' + JSON.stringify(args));
+if (debug) {
+  console.log('CLI arguments ' + JSON.stringify(args));
+}
 fs.readdir(pagesDirectory, (err, pageFiles) => {
   errorHandler(err);
   pageFiles.forEach(pageFile => {

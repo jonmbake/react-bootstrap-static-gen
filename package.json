@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "A static page generator for react-bootstrap.",
   "main": "index.js",
+  "bin": {
+    "react-bootstrap-static-gen": "./bin/react-bootstrap-static-gen.js"
+  },
   "scripts": {
+    "install-peers": "install-peers -f",
+    "pretest": "install-peers -f",
     "test": "mocha"
   },
   "repository": {
@@ -25,7 +30,10 @@
   "homepage": "https://github.com/jonmbake/react-bootstrap-static-gen#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.0.1",
+    "install-peers-cli": "^2.2.0",
+    "mocha": "^8.0.1"
+  },
+  "peerDependencies": {
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1"

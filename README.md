@@ -10,6 +10,9 @@ Note: This uses [ReactDOMServer](https://reactjs.org/docs/react-dom-server.html)
 
 ## Getting Started
 
+`react-bootstrap-static-gen` has peer dependencies on `react`, `react-dom`, and `react-bootstrap`. Make sure to declare
+a dependency version of each of these in your project's _package.json_. Then run:
+
 ```
 npm install react-bootstrap-static-gen
 ```
@@ -59,10 +62,14 @@ A corresponding _./pages-output/homePage.html_ would get generated:
 <head>
   <meta charset="utf-8">
   <title>Test Page</title>
-  <link rel="styleheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
   <div class="jumbotron">Testing a jombotron!</div>
 </body>
 </html>
 ```
+
+## Development
+
+Make sure to run `npm run install-peers` after `npm install` so peer dependencies are installed.

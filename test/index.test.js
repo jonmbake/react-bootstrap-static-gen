@@ -35,20 +35,20 @@ describe('page rendering', () => {
       });
     });
   }) 
-  // it('should default to using bootstrap 4.5.0 cdn for styling', (done) => {
-  //   exec('node ./index.js ./test/pages', (error, stdout, stderr) => {
-  //     fs.readFile('./test/pages-output/testPage.html', 'utf8', (err, data) => {
-  //       expect(data).to.contain('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">');
-  //       done();
-  //     });
-  //   });
-  // });
-  // it('should allow for overriding default bootstrap styling', (done) => {
-  //   exec('node ./index.js --style=custom-style.css -- ./test/pages', (error, stdout, stderr) => {
-  //     fs.readFile('./test/pages-output/testPage.html', 'utf8', (err, data) => {
-  //       expect(data).to.contain('<link rel="stylesheet" href="custom-style.css">');
-  //       done();
-  //     });
-  //   });
-  // });
+  it('should default to using bootstrap 4.5.0 cdn for styling', (done) => {
+    exec('node ./index.js ./test/pages', (error, stdout, stderr) => {
+      fs.readFile('./test/pages-output/testPage.html', 'utf8', (err, data) => {
+        expect(data).to.contain('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">');
+        done();
+      });
+    });
+  });
+  it('should allow for overriding default bootstrap styling', (done) => {
+    exec('node ./index.js --style=custom-style.css ./test/pages', (error, stdout, stderr) => {
+      fs.readFile('./test/pages-output/testPage.html', 'utf8', (err, data) => {
+        expect(data).to.contain('<link rel="stylesheet" href="custom-style.css">');
+        done();
+      });
+    });
+  });
 });
