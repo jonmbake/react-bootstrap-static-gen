@@ -5,7 +5,6 @@ const expect = require('chai').expect;
 describe('page rendering', () => {
   beforeEach(done => {
     if(fs.existsSync('./test/pages-output/testPage.html')) {
-      console.log('removing dir')
       fs.unlink('./test/pages-output/testPage.html', done);
     } else {
       done();
