@@ -1,21 +1,6 @@
 const { exec } = require("child_process");
 const fs = require('fs');
-var expect = require('chai').expect;
-
-describe('validation', () => {
-  it('should give an error if pages directory is not provided', (done) => {
-    exec('./bin/react-bootstrap-static-gen.js', (error, stdout, stderr) => {
-      expect(stderr).to.contain('pages-directory must be specified.');
-      done();
-    });
-  });
-  it('should give an error if pages directory is not a directory', (done) => {
-    exec('./bin/react-bootstrap-static-gen.js ./not-a-directory', (error, stdout, stderr) => {
-      expect(stderr).to.contain('pages-directory must be a directory.');
-      done();
-    });
-  });
-});
+const expect = require('chai').expect;
 
 describe('page rendering', () => {
   beforeEach(done => {
@@ -44,9 +29,10 @@ describe('page rendering', () => {
     });
   });
   it('should allow for overriding default bootstrap styling', (done) => {
-    exec('./bin/react-bootstrap-static-gen.js --style=custom-style.css ./test/pages', (error, stdout, stderr) => {
+    exec('./bin/react-bootstrap-static-gen.js --style=custom-style.css --style=another-style.css ./test/pages', (error, stdout, stderr) => {
       fs.readFile('./test/pages-output/testPage.html', 'utf8', (err, data) => {
         expect(data).to.contain('<link rel="stylesheet" href="custom-style.css">');
+        expect(data).to.contain('<link rel="stylesheet" href="another-style.css">');
         done();
       });
     });

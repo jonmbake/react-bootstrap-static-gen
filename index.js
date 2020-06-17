@@ -13,7 +13,7 @@ const htmlTemplate = (pageTitle = '', pageBody, style) => {
 <head>
   <meta charset="utf-8">
   <title>${ pageTitle }</title>
-  <link rel="stylesheet" href="${ style }">
+  ${ style.map(s => '<link rel="stylesheet" href="' + s + '">') }
 </head>
 <body>
   ${ pageBody }
