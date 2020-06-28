@@ -18,7 +18,7 @@ npm install react-bootstrap-static-gen
 ```
 
 ```
-> ./node_modules/react-bootstrap-static-gen/index.js --help
+> ./node_modules/react-bootstrap-static-gen/bin/react-bootstrap-static-gen.js  --help
 Usage: index.js [options] <pages-directory>
 
 Options:
@@ -31,7 +31,7 @@ Options:
   --help            Show help                                          [boolean]
 ```
 
-Note: if running in a package.json script, you can use `react-bootstrap-static-gen` instead of `./node_modules/react-bootstrap-static-gen/index.js`.
+Note: if running in a package.json script, you can use `react-bootstrap-static-gen` instead of `./node_modules/react-bootstrap-static-gen/bin/react-bootstrap-static-gen.js`.
 
 ## Example Usage
 
