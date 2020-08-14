@@ -32,7 +32,7 @@
     "chai": "^4.2.0",
     "install-peers-cli": "^2.2.0",
     "lodash": ">=4.17.19",
-    "mocha": "^8.0.1"
+    "mocha": "^8.1.1"
   },
   "peerDependencies": {
     "react": "^16.13.1",
